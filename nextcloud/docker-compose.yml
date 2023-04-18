@@ -1,0 +1,28 @@
+version: '3'
+
+volumes:
+  nextcloud:
+  db:
+
+services:
+
+  nextcloud:
+    image: nextcloud:24-apache
+    restart: always
+    networks:
+      - sprint
+    ports:
+      - 8077:80
+    volumes:
+      - ./nextcloud-docroot:/var/www/html
+    environment:
+      - NEXTCLOUD_DATA_DIR=/var/www/html/data
+      - MYSQL_PASSWORD=${pass}
+      - MYSQL_DATABASE=mariadb
+      - MYSQL_USER=${user}
+      - MYSQL_HOST=mariadb
+
+networks:
+  sprint:
+    name: sprint
+    driver: bridge
