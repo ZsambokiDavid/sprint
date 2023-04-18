@@ -23,5 +23,5 @@ services:
       - MYSQL_HOST=mariadb
 
 networks:
-  sprint:
+  a13b5986d90a:
     driver: bridge
