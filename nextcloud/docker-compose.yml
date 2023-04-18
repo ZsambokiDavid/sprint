@@ -14,7 +14,7 @@ services:
     ports:
       - 8077:80
     volumes:
-      - nextcloud-docroot:/var/www/html
+      - ~/nextcloud-docroot:/var/www/html
     environment:
       - NEXTCLOUD_DATA_DIR=/var/www/html/data
       - MYSQL_PASSWORD=${pass}
