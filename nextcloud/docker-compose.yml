@@ -9,7 +9,7 @@ services:
     image: nextcloud:24-apache
     restart: always
     networks:
-      - sprint
+      - nextcloud-network
     ports:
       - 8077:80
     volumes:
@@ -22,5 +22,5 @@ services:
       - MYSQL_HOST=mariadb
 
 networks:
-  sprint:
-    driver: bridge
+  nextcloud-network:
+    external: true
