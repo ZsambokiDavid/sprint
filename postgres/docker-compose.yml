@@ -12,6 +12,7 @@ services:
       - db:/var/lib/postgresql/data
     networks:
       - nextcloud-network
+    user: ${CURRENT_UID}
 volumes:
   db:
     driver: local
