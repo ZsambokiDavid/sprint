@@ -12,7 +12,7 @@ services:
       - MYSQL_USER=${user}
       - MYSQL_PASSWORD=${user_password}
       - MYSQL_INITDB_SKIP_TZINFO=Y
-      
+    
     volumes:
       - data:/var/lib/mysql
     ports:
