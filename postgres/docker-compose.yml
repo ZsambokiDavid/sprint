@@ -1,11 +1,12 @@
 version: '3.8'
 services:
   db:
-    image: bitnami/postgresql:latest
+    image: docker.io/bitnami/postgresql:latest
     restart: always
     environment:
       - POSTGRES_USER=${puser}
       - POSTGRES_PASSWORD=${ppass}
+      - ALLOW_EMPTY_PASSWORD=yes
     ports:
       - '5432:5432'
     volumes: 
