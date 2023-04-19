@@ -17,9 +17,9 @@ services:
     environment:
       - NEXTCLOUD_DATA_DIR=/var/www/html/data
       - MYSQL_PASSWORD=${pass}
-      - MYSQL_DATABASE=mariadb
+      - MYSQL_DATABASE=postgres
       - MYSQL_USER=${user}
-      - MYSQL_HOST=mariadb
+      - MYSQL_HOST=postgres
 
 networks:
   nextcloud-network:
