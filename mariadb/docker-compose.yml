@@ -8,7 +8,7 @@ services:
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-file-per-table=1 --skip-innodb-read-only-compressed
     environment:
       - MYSQL_ROOT_PASSWORD=${root_password}
-      - MYSQL_DATABASE=mydatabase
+      - MYSQL_DATABASE=mariadb
       - MYSQL_USER=${user}
       - MYSQL_PASSWORD=${user_password}
     volumes:
@@ -32,7 +32,7 @@ services:
         constraints:
           - node.hostname == ${EXP_NODENAME}
     networks:
-      - nextcloud_network
+      - nextcloud-network
     depends_on:
       - mariadb
 
