@@ -14,7 +14,7 @@ services:
       - nextcloud-network
     user: ${john}
 volumes:
-  db:
+  db2:
     driver: local
 
 networks:
