@@ -15,28 +15,19 @@ services:
     
     volumes:
       - data:/var/lib/mysql
+      - ~/config-files/primarycnf/primary-1.cnf:/etc/mysql/my.cnf
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - "3306:3306"
     networks:
     - nextcloud-network
 
-  mariadb-exporter:
-    image: quay.io/prometheus/mysqld-exporter
-    command: --collect.info_schema.tables
-    environment:
-      - DATA_SOURCE_NAME=${EXPORTER_USER}:${EXPORTER_PW}@(mariadb:3306)/?allowCleartextPasswords=true
-    ports:
-      - 9104:9104
     deploy:
       mode: replicated
       replicas: 1
       placement:
         constraints:
-          - node.hostname == ${EXP_NODENAME}
-    networks:
-      - nextcloud-network
-    depends_on:
-      - mariadb
+          - node.hostname == ${NODENAME}
 
 networks:
   nextcloud-network:
