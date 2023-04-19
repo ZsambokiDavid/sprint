@@ -15,7 +15,7 @@ services:
     
     volumes:
       - data:/var/lib/mysql
-      - ~/config-files/primarycnf/primary-1.cnf:/etc/mysql/my.cnf
+      - /config-files/primarycnf/primary-1.cnf:/etc/mysql/my.cnf
       - /etc/localtime:/etc/localtime:ro
     ports:
       - "3306:3306"
