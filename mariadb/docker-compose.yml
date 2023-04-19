@@ -4,6 +4,8 @@ volumes:
 services:
   db:
     image: mariadb
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-file-per-table=1 --skip-innodb-read-only-compressed
     environment:
       - MYSQL_ROOT_PASSWORD=${root_password}
       - MYSQL_DATABASE=mydatabase
@@ -15,6 +17,24 @@ services:
       - "3306:3306"
     networks:
     - nextcloud-network
+
+  mariadb-exporter:
+    image: quay.io/prometheus/mysqld-exporter
+    command: --collect.info_schema.tables
+    environment:
+      - DATA_SOURCE_NAME=${EXPORTER_USER}:${EXPORTER_PW}@(mariadb:3306)/?allowCleartextPasswords=true
+    ports:
+      - 9104:9104
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.hostname == ${EXP_NODENAME}
+    networks:
+      - nextcloud_network
+    depends_on:
+      - mariadb
 
 networks:
   nextcloud-network:
