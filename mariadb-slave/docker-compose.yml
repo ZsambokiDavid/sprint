@@ -2,7 +2,7 @@ version: '3'
 volumes:
   data:
 services:
-  db:
+  slave:
     image: mariadb
     restart: always
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --innodb-file-per-table=1 --skip-innodb-read-only-compressed
@@ -18,9 +18,11 @@ services:
       - /config-files/secondary/secondary-1.cnf:/etc/mysql/my.cnf
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
     - nextcloud-network
+    links:
+    - db
 
     deploy:
       mode: replicated
