@@ -30,7 +30,6 @@ services:
       placement:
         constraints:
           - node.hostname == ${NODENAME}
-        max_replicas_per_node: 1
 
 networks:
   nextcloud-network:
