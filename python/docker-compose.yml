@@ -5,7 +5,7 @@ services:
   python:
     image: python
     restart: always
-    entrypoint: /bash
+#    entrypoint: bash
     command: /root/pcode/code.py
     networks:
     - nextcloud-network
