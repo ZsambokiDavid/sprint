@@ -1,0 +1,21 @@
+version: '3'
+volumes:
+  data:
+services:
+  python:
+    image: python
+    restart: always
+    command: /pcode/code.py
+    networks:
+    - nextcloud-network
+
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.hostname == ${NODENAME}
+
+networks:
+  nextcloud-network:
+    external: true
