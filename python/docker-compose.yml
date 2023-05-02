@@ -5,7 +5,7 @@ services:
   python:
     image: python
     restart: always
-    command: /pcode/code.py
+    command: /root/pcode/code.py
     networks:
     - nextcloud-network
 
