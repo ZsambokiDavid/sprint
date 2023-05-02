@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       - /root/pcode/code.py=/root/pcode/code.py
-    command: "/root/pcode/code.py"
+#    command: "/root/pcode/code.py"
 #    entrypoint: "/root/pcode/code.py"
     networks:
     - nextcloud-network
