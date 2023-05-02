@@ -17,6 +17,7 @@ services:
       - data:/var/lib/mysql
       - /root/config-files/secondary/secondary-1.cnf:/etc/mysql/my.cnf
       - /etc/localtime:/etc/localtime:ro
+      - /root/secondaryinit:/docker-entrypoint-initdb.d:z
     ports:
       - "3307:3306"
     networks:
