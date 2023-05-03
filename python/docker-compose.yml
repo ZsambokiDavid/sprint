@@ -5,7 +5,7 @@ services:
   python:
     image: python
     restart: always
-    environment:
+    volumes:
       - /root/pcode/app.py=app.py
 #    command: "/root/pcode/app.py"
     entrypoint: python app.py
