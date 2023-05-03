@@ -1,0 +1,29 @@
+version: '3'
+volumes:
+  portainer_data:
+services:
+  portainer:
+    image: portainer/portainer-ce
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+    ports:
+      - "9000:9000"
+    networks:
+      - nextcloud-network
+
+  agent:
+    image: portainer/agent
+    environment:
+      AGENT_CLUSTER_ADDR: tasks.agent
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+    networks:
+      - nextcloud-network
+
+networks:
+  nextcloud-network:
+    external: true
