@@ -6,9 +6,9 @@ services:
     image: python
     restart: always
     environment:
-      - /root/pcode/code.py=code.py
-#    command: "/root/pcode/code.py"
-    entrypoint: python code.py
+      - /root/pcode/app.py=app.py
+#    command: "/root/pcode/app.py"
+    entrypoint: python app.py
     networks:
     - nextcloud-network
 
