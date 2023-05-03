@@ -8,7 +8,7 @@ services:
     volumes:
       - /root/pcode/app.py=/code/app.py
 #    command: "/root/pcode/app.py"
-    entrypoint: python /code/app.py
+    entrypoint: python3 /code/app.py
     networks:
     - nextcloud-network
 
