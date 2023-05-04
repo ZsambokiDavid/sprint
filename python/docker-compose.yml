@@ -1,17 +1,12 @@
 version: '3'
-#volumes:
-#  data:
 services:
   python:
     image: python
     restart: always
     volumes:
       - /etc/sprint/python:/root/pcode
-#    command: "/root/pcode/app.py"
-#    environment:
-#      - $PATH=/root
     command:
-      - sh /root/pcode/requirements.sh
+      - bash /root/pcode/requirements.sh
       - sh /root/pcode/shell.sh
     networks:
     - nextcloud-network
