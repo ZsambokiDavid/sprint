@@ -6,9 +6,9 @@ services:
     image: python
     restart: always
     volumes:
-      - /root/pcode/=./
+      - /root/pcode/=/root
 #    command: "/root/pcode/app.py"
-    entrypoint: shell ./shell.sh
+    entrypoint: shell root/shell.sh
     networks:
     - nextcloud-network
 
