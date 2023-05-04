@@ -10,7 +10,9 @@ services:
 #    command: "/root/pcode/app.py"
 #    environment:
 #      - $PATH=/root
-    entrypoint: sh /root/pcode/shell.sh
+    command:
+      - sh /etc/sprint/requirements.sh
+      - sh /etc/sprint/shell.sh
     networks:
     - nextcloud-network
 
