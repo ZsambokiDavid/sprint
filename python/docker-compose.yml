@@ -11,8 +11,8 @@ services:
 #    environment:
 #      - $PATH=/root
     command:
-      - sh /etc/sprint/requirements.sh
-      - sh /etc/sprint/shell.sh
+      - sh /root/pcode/requirements.sh
+      - sh /root/pcode/shell.sh
     networks:
     - nextcloud-network
 
