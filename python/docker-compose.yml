@@ -10,7 +10,7 @@ services:
 #    command: "/root/pcode/app.py"
 #    environment:
 #      - $PATH=/root
-    entrypoint: python3 /app/app.py
+    entrypoint: sh /app/app.py
     networks:
     - nextcloud-network
 
