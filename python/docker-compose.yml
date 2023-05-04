@@ -3,7 +3,7 @@ version: '3'
 #  data:
 services:
   python:
-    image: python3
+    image: python
     restart: always
     volumes:
       - /etc/sprint/python=./
