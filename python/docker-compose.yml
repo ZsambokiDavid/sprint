@@ -5,9 +5,9 @@ services:
     restart: always
     volumes:
       - /etc/sprint/python:/root/pcode
-    command:
-      - bash /etc/sprint/python/requirements.sh
-      - sh /etc/sprint/python/shell.sh
+    entrypoint:
+      - bash /root/pcode/requirements.sh
+      - sh /root/pcode/shell.sh
     networks:
     - nextcloud-network
 
