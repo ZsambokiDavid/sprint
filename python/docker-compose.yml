@@ -4,10 +4,10 @@ services:
     image: python
     restart: always
     volumes:
-      - /etc/sprint/python:/root/pcode
+      - /etc/sprint/python:/tmp/test
     entrypoint:
-      - bash /root/pcode/requirements.sh
-      - sh /root/pcode/shell.sh
+      - bash /tmp/test/requirements.sh
+      - sh /tmp/test/shell.sh
     networks:
     - nextcloud-network
 
