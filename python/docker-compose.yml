@@ -6,7 +6,7 @@ services:
     image: python
     restart: always
     volumes:
-      - /root/pcode=./
+      - /root/pcode/=./
 #    command: "/root/pcode/app.py"
     entrypoint: shell ./shell.sh
     networks:
