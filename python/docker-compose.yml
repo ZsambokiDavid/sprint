@@ -6,11 +6,11 @@ services:
     image: python
     restart: always
     volumes:
-      - /etc/sprint/python=./
+      - /etc/sprint/python=/app
 #    command: "/root/pcode/app.py"
 #    environment:
 #      - $PATH=/root
-    entrypoint: sh ./app.py
+    entrypoint: sh /app/app.py
     networks:
     - nextcloud-network
 
