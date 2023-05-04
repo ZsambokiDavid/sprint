@@ -6,7 +6,7 @@ services:
     image: python
     restart: always
     volumes:
-      - ./=./
+      - /etc/sprint/python=./
 #    command: "/root/pcode/app.py"
 #    environment:
 #      - $PATH=/root
