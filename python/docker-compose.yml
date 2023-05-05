@@ -11,7 +11,7 @@ services:
 #      - sh /tmp/test/shell.sh
     entrypoint: 
       - sleep 5000
-      - bash
+#      - bash
     networks:
     - nextcloud-network
 
