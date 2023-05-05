@@ -5,13 +5,11 @@ services:
     restart: always
     volumes:
       - /etc/sprint/python:/tmp/test
-    command:
-      - bash
-      - sleep 5000
+#    command:
 #      - cd /tmp/test
 #      - bash /tmp/test/requirements.sh
 #      - sh /tmp/test/shell.sh
-#    entrypoint:
+    entrypoint: bash
     networks:
     - nextcloud-network
 
