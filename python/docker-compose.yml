@@ -7,9 +7,9 @@ services:
       - /etc/sprint/python:/tmp/test
     command:
       - bash
-      - cd /tmp/test
-      - bash /tmp/test/requirements.sh
-      - sh /tmp/test/shell.sh
+#      - cd /tmp/test
+#      - bash /tmp/test/requirements.sh
+#      - sh /tmp/test/shell.sh
 #    entrypoint: bash
     networks:
     - nextcloud-network
