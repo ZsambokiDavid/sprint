@@ -7,10 +7,11 @@ services:
       - /etc/sprint/python:/tmp/test
     command:
       - bash
+      - sleep 5000
 #      - cd /tmp/test
 #      - bash /tmp/test/requirements.sh
 #      - sh /tmp/test/shell.sh
-    entrypoint: sleep 5000
+#    entrypoint:
     networks:
     - nextcloud-network
 
