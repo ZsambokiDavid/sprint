@@ -10,6 +10,6 @@ echo "ad125f01bada12a1ba2f9986a21c59d2cccbe8d584e7f55079ecbeb7f43a4da4  mariadb_
 chmod +x mariadb_repo_setup
 ./mariadb_repo_setup \
    --mariadb-server-version="mariadb-10.6"
-apt install libmariadb3 libmariadb-dev
+apt install -y libmariadb3 libmariadb-dev
 python3 -m pip install -y mariadb --no-cache-dir
 #python -m pip download --only-binary :all: --dest . --no-cache mariadb
