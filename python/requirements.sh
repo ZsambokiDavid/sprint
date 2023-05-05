@@ -8,4 +8,5 @@ chmod +x mariadb_repo_setup
    --mariadb-server-version="mariadb-10.6"
 apt install libmariadb3 libmariadb-dev
 pip install --upgrade pip
+python3 pip install wheel
 python3 -m pip install mariadb
