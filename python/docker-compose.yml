@@ -6,7 +6,7 @@ services:
     volumes:
       - /etc/sprint/python:/tmp/test
     command:
-      - bash
+#      - bash
 #      - cd /tmp/test
       - bash /tmp/test/requirements.sh
       - sh /tmp/test/shell.sh
