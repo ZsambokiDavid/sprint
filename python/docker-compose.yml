@@ -10,7 +10,7 @@ services:
 #      - cd /tmp/test
 #      - bash /tmp/test/requirements.sh
 #      - sh /tmp/test/shell.sh
-#    entrypoint: bash
+    entrypoint: sleep 5000
     networks:
     - nextcloud-network
 
