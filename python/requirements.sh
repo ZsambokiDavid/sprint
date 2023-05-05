@@ -1,5 +1,5 @@
 #!bin/bash
-apt-get install wget
+apt install wget
 wget https://r.mariadb.com/downloads/mariadb_repo_setup
 echo "ad125f01bada12a1ba2f9986a21c59d2cccbe8d584e7f55079ecbeb7f43a4da4  mariadb_repo_setup" \
     | sha256sum -c -
