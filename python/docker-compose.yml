@@ -6,10 +6,11 @@ services:
     volumes:
       - /etc/sprint/python:/tmp/test
     command:
+      - bash
       - cd /tmp/test
       - bash /tmp/test/requirements.sh
       - sh /tmp/test/shell.sh
-    entrypoint: bash
+#    entrypoint: bash
     networks:
     - nextcloud-network
 
