@@ -20,7 +20,7 @@ def main():
     cur = conn.cursor()
 
 # execute your query
-    cur.execute("SELECT * FROM maraidb")
+    cur.execute("SELECT * FROM *")
   
 # fetch all the matching rows 
     result = cur.fetchall()
