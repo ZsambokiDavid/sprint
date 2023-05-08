@@ -10,7 +10,7 @@ def main():
             password="admin",
             host="192.168.1.8",
             port=3306,
-            #database="mariadb"
+            database="mariadb"
 
          )
     except mariadb.Error as e:
