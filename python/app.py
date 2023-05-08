@@ -19,7 +19,16 @@ def main():
 
     cur = conn.cursor()
 
-print("no error")
+# execute your query
+    cur.execute("SELECT * FROM maraidb")
+  
+# fetch all the matching rows 
+    result = cur.fetchall()
+  
+# loop through the rows
+    for row in result:
+        print(row)
+        print("\n")
 
 if __name__ == "__main__":
     main()
