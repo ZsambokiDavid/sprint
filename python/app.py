@@ -8,7 +8,7 @@ def main():
         conn = mariadb.connect(
             user="david",
             password="admin",
-            host="192.168.104.66",
+            host="192.168.1.8",
             port=3306,
             database="mariadb"
 
