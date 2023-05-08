@@ -22,8 +22,8 @@ def main():
 # execute your query
 #    cur.execute("SELECT * FROM mariadb")
 #    dbresult = cur.execute("SHOW DATABASES LIKE 'm%';")
-    cur.execute("GRANT SELECT ON * TO PUBLIC")
-    cur.execute("SELECT * FROM mariadb")
+    cur.execute("GRANT SELECT ON * TO PUBLIC;")
+    cur.execute("SELECT * FROM mariadb;")
   
 # fetch all the matching rows 
     result = cur.fetchall()
