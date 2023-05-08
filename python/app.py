@@ -24,7 +24,7 @@ def main():
 #    dbresult = cur.execute("SHOW DATABASES LIKE 'm%';")
 #    cur.execute("GRANT SELECT ON * TO PUBLIC;")
     cur.execute("SELECT * FROM mariadb;")
-    cur.execute("show tables;")
+#    cur.execute("show tables;")
   
 # fetch all the matching rows 
     result = cur.fetchall()
