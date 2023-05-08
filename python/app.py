@@ -20,7 +20,8 @@ def main():
     cur = conn.cursor()
 
 # execute your query
-    cur.execute("SELECT * FROM mariadb")
+#    cur.execute("SELECT * FROM mariadb")
+    cur.execute("SHOW DATABASES LIKE 'm%';")
   
 # fetch all the matching rows 
     result = cur.fetchall()
