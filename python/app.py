@@ -21,7 +21,6 @@ def main():
 
 # execute your query
     cur.execute("SELECT * FROM mariadb;")
-#    cur.execute("show tables;")
   
 # fetch all the matching rows 
     result = cur.fetchall()
