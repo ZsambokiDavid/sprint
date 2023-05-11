@@ -1,0 +1,25 @@
+version: '3'
+services:
+  python:
+    image: python
+    restart: always
+    volumes:
+      - /etc/sprint/python-slave:/tmp/test2
+    command: bash -c "bash /tmp/test2/requirements.sh && sh /tmp/test2/shell.sh"
+#      - cd /tmp/test
+#      - bash /tmp/test/requirements.sh
+#      - sh /tmp/test/shell.sh
+#    entrypoint: sleep 5000
+    networks:
+    - nextcloud-network
+
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.hostname == ubuclient
+
+networks:
+  nextcloud-network:
+    external: true
