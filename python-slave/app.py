@@ -9,7 +9,7 @@ def main():
             user="david",
             password="admin",
             host="192.168.104.14",
-            port=3306,
+            port=3306/tcp,
             database="mariadb"
 
          )
